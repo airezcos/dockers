@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      MOTD: "Vanilla Minecraft, Chill Vibes Only"
+      EULA: "TRUE"
+      ENABLE_RCON: "true"
+      # PVP: "false"
+      # ENFORCE_WHITELIST: "true"
+      # WHITELIST: "user1,user2"
+      # SETUP_ONLY: "true"
+      RCON_PASSWORD: "E2cmRc2@voW9niLgfE"
+      RCON_PORT: 28016
+    restart: unless-stopped
+    volumes:
+      - ./minecraft-data:/data

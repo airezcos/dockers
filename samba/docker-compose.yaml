@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+
+  samba:
+    container_name: samba
+    image: dperson/samba
+    ports:
+      - "445:445"
+      - "139:139"
+    restart: unless-stopped
+    volumes:
+      - samba_data:/srv/data
+      - /srv/plex:/srv/plex
+    command: -p
+
+volumes:
+  samba_data:
